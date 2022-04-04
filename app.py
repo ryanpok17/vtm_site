@@ -18,8 +18,8 @@ def about():
 def estimate():
     return render_template('estimate.html', pageTitle='estimate')
 
-@app.route('/vtm_estimate', methods=['GET', 'POST'])
-def vtm_estimate():
+@app.route('/vtm_calc', methods=['GET', 'POST'])
+def vtm_calc():
     if request.method == 'POST':
         form = request.form
         Tradius = form['Tradius']
@@ -31,8 +31,8 @@ def vtm_estimate():
         mat_cost = total_sq_ft * 25
         lab_cost = total_sq_ft * 15
         cost = lab_cost + mat_cost
-        return redirect(url_for('estimate'))
-    return redirect(url_for('estimate'))
+        return redirect(url_for('index'))
+    return redirect(url_for('index'))
     
 
 if __name__ == '__main__':
