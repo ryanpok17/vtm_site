@@ -31,8 +31,9 @@ def vtm_calc():
         mat_cost = total_sq_ft * 25
         lab_cost = total_sq_ft * 15
         cost = lab_cost + mat_cost
-        return redirect(url_for('index'))
-    return redirect(url_for('index'))
+        print(cost)
+        return redirect(url_for('estimate'))
+    return redirect(url_for('estimate'))
     
 
 if __name__ == '__main__':
