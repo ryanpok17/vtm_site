@@ -17,17 +17,16 @@ def about():
 def estimate():
     return render_template('mike.html', pageTitle='About Mike')
 
-@app.route('/add_friend', methods=['GET', 'POST'])
-def add_friend():
+@app.route('/vtm_estimate', methods=['GET', 'POST'])
+def vtm_estimate():
     if request.method == 'POST':
         form = request.form
-        fname = form['fname']
-        lname = form['lname']
-        email = form['email']
-        friend_dict = {"name": fname + " " + lname, "email": email}
-        friend_list.append(friend_dict)
-        return redirect(url_for('index'))
-    return redirect(url_for('index'))
+        Tradius = form['Tradius']
+        Theight = form['Theight']
+        #friend_dict = {"name": fname + " " + lname, "email": email}
+        #friend_list.append(friend_dict)
+        #return redirect(url_for('index'))
+    #return redirect(url_for('index'))
     
 
 if __name__ == '__main__':

@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block body %}
+
+    <h1>Vertical Tank Maintanance</h1>
+    <hr />
+
+    <p>VTM Estimator</p>
+
+    <form action="/vtm_estimate" method="POST">
+        <label for="Tradius">Tank Radius:</label>
+        <input type="text" id="Tradius" name="Tradius" autofocus required/> 
+        <br />
+        <label for="Theight">Tank Height:</label>
+        <input type="text" id="Theight" name="Theight:" autofocus required/>
+        <br />
+        <input type="submit" id="submit" value="Submit" />
+
+<input type="submit" id="submit" value="I'll Be Your Friend" />
+<input type="reset" value="Clear" />
+</form>
+
+{% endblock %}
