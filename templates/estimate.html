@@ -8,15 +8,23 @@
 
 <p>VTM Estimator</p>
 
-<form action='/vtm_calc' method='POST'>
+<form action='/vtm_calc' method="POST">
     <label for="Tradius">Tank Radius:</label>
     <input type="number" id="Tradius" name="Tradius" autofocus required/> 
     <br />
     <label for="Theight">Tank Height:</label>
-    <input type="number" id="Theight" name="Theight:" autofocus required/>
+    <input type="number" id="Theight" name="Theight" autofocus required/>
     <br />
     <input type="submit" id="submit" value="Submit" />
     <input type="reset" value="Clear" />
 </form>
+<br />
+{% if est %}
+
+{% for element in est %}
+      <p>The price is {{ element }} dollars</p>
+  {% endfor %}
+
+{% endif %}
 
 {% endblock %}

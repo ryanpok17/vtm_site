@@ -4,7 +4,7 @@ from flask import render_template, redirect, request, url_for
 
 app = Flask(__name__)
 
-friend_list = [{"name": "Mike Colbert", "email":"mike@mike.com" } ]
+price=[]
 
 @app.route('/')
 def index():
@@ -16,22 +16,23 @@ def about():
 
 @app.route('/estimate')
 def estimate():
-    return render_template('estimate.html', pageTitle='estimate')
+    return render_template('estimate.html', pageTitle='estimate',est=price)
 
 @app.route('/vtm_calc', methods=['GET', 'POST'])
 def vtm_calc():
     if request.method == 'POST':
         form = request.form
-        Tradius = form['Tradius']
-        Theight = form['Theight']
-        tank_top = pi * (Tradius*Tradius)
-        tank_side = 2(pi(Tradius*Theight))
+        radius = int(form['Tradius'])
+        height = int(form['Theight'])
+        tank_top = pi * (radius*radius)
+        tank_side = ((radius*height)*pi)*2
         total_area = tank_side + tank_top
         total_sq_ft = total_area/144
         mat_cost = total_sq_ft * 25
         lab_cost = total_sq_ft * 15
         cost = lab_cost + mat_cost
-        print(cost)
+        cost = round(cost,2)
+        price.append(cost)
         return redirect(url_for('estimate'))
     return redirect(url_for('estimate'))
     
