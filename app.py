@@ -29,7 +29,6 @@ def estimate():
         return render_template('estimate.html', pageTitle='Make Estimate', estimate=total_estimate)
     return render_template('estimate.html', pageTitle='Make Estimate')
 
-   
 
 
 if __name__ == '__main__':
