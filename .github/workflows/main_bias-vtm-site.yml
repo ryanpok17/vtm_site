@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'BIAS-vtm-site'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D494E75EB5CA4EE889104EC180BE1F8B }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D93DCB5B724C4705BEBBCC4ACCF48112 }}
