@@ -1,30 +1,23 @@
-{% extends 'base.html' %} {% block body %}
+{% extends 'base.html' %}
 
-<h1>Vertical Tank Maintanance</h1>
-<a href="/"> Home </a> 
-<a href="/about"> About </a> 
-<a href="/estimate"> Estimate </a> 
-<hr />
+{% block body %}
 
-<p>VTM Estimator</p>
 
-<form action='/vtm_calc' method="POST">
-    <label for="Tradius">Tank Radius:</label>
-    <input type="number" id="Tradius" name="Tradius" autofocus required/> 
-    <br />
-    <label for="Theight">Tank Height:</label>
-    <input type="number" id="Theight" name="Theight" autofocus required/>
-    <br />
-    <input type="submit" id="submit" value="Submit" />
-    <input type="reset" value="Clear" />
-</form>
-<br />
-{% if est %}
 
-{% for element in est %}
-      <p>The price is {{ element }} dollars</p>
-  {% endfor %}
-
+	<h3> Create an estimate</h3>
+	<form action="/estimate" method= "POST">
+		<label for="tank_radius">Tank Radius:</label>
+		<input type="text" id="tank_radius" name="tank_radius" />
+		<br>
+		<label for="tank_height">Tank Height:</label>
+		<input type="text" id="tank_height" name="tank_height" />
+		<br>
+		<input type="submit" id="submit" value="Submit">
+		<input type="reset" value="Clear" /> 
+	</form>
+	
+{% if estimate %}
+<p> The estimate for painting is $ {{estimate}} </p>
 {% endif %}
 
 {% endblock %}
